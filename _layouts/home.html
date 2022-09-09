@@ -8,15 +8,15 @@
       {{ content }}
     </div>
 
-    <div class="my-6">
+    <!-- <div class="my-6">
       {% include projects.html %}
-    </div>
+    </div> -->
 
-    {% if site.topics %}
+    <!-- {% if site.topics %}
       <div class="my-6">
         {% include interests.html %}
       </div>
-    {% endif %}
+    {% endif %} -->
 
     {% unless posts_total == 0 %}
       <div class="my-6">
@@ -38,15 +38,231 @@
           </div>
         {% endunless %}
 
-        {% include projects.html %}
+
+
+<h2 style="color: white"> The Journey So Far! </h2>
+<img src="/assets/images/timeline.png"  style="width:110%;height:110%;">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  /*margin: 0 auto;*/
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 75%;
+  /*margin-left: -3px;*/
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -19px;
+  background-color: #a9e9f2;
+  border: 4px solid #3e5e63;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -14px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 13px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>June 2022</h2>
+      <img src="/assets/images/Amazon logo.PNG"  style="width:50%;height:50%;">
+      <p>Joined Amazon.com as a Software Development Engineer I</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>May 2022</h2>
+      <p>Graduated from ASU with a Masters in Computer Science (Cybersecurity)</p>
+      <img src="/assets/images/mcs_grad.jpg"  style="width:100%;height:100%;">
+      <br>
+      <p>Completed Graduate Systems Programmer Internship at Intel</p>
+      <img src="/assets/images/intel_last.jpg"  style="width:100%;height:100%;">
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>August 2021</h2>
+      <p> Completed SDE Internship at Amazon </p>
+      <img src="/assets/images/complete_amazon.jpg"  style="width:100%;height:100%;">
+      <p>Continued Graduate Studies as well as served as a TA for introductory Computer Science courses</p>
+      <img src="/assets/images/GTA_slide.png"  style="width:100%;height:100%;">
+      <p>Rejoined Intel with promotion to Graduate Systems Programmer Intern.</p>
+      <img src="/assets/images/intel_return.JPG"  style="width:100%;height:100%;">
+    </div>
+  </div>
+
+
+  <div class="container right">
+    <div class="content">
+      <h2>May 2021</h2>
+      <p>Started Summer SDE Internship at Amazon.</p>
+      <img src="/assets/images/amazon_intern.jpeg"  style="width:100%;height:100%;">
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>May 2021</h2>
+      <p>Graduated with a Bachelors from ASU as the Computer Science Valedectorian.</p>
+      <img src="/assets/images/bs_grad.jpg"  style="width:100%;height:100%;">
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>April 2021</h2>
+      <p>Completed Undergraduate Systems Progammer Internship at Intel</p>
+      <img src="/assets/images/complete_intel.jpeg"  style="width:100%;height:100%;">
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>July 2018</h2>
+      <p>Started Undergrad Systems Programmer Internship at Intel.</p>
+      <img src="/assets/images/started_intel.jpg"  style="width:100%;height:100%;">
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>August 2017</h2>
+      <p>Started Undergrad Studies at ASU pursuing a Bachelors in Computer Science</p>
+      <img src="/assets/images/started_asu.JPG"  style="width:100%;height:100%;">
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- {% include projects.html %}
 
         {% if site.topics %}
           {% include interests.html %}
-        {% endif %}
+        {% endif %} -->
 
-        {% unless posts_total == 0 %}
+        <!-- {% unless posts_total == 0 %}
           {% include thoughts.html %}
-        {% endunless %}
+        {% endunless %} -->
       </div>
     </div>
   </div>
